@@ -1,0 +1,7 @@
+Fonctions a faire
+
+- Calculer capacité covid (en fonction de la surface du club)
+- Calculer le nombre d'employé (compter le nombre d'employés)
+- Calculer le benefice de chaque club (CA - charges)
+- Calculer les notes
+- Calculer la moyennes des notes des clubs
