@@ -7,3 +7,6 @@
 - gerer les tarifs (table options(nom, prix) et table relationnelle adherent-prix))
 
 ---------------------------------- TODO -------------------------------
+
+- Revoir mpd/mcd + generer pdf (rename table prestations)
+- mettre contrainte de note ( > 5 )
