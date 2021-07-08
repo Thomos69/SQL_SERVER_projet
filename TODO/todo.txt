@@ -1,0 +1,9 @@
+---------------------------------- FINI -------------------------------
+
+- Virer note de table club
+- Ajouter numero tel a adherent/employe/club/prestataire
+- Mettre prix mesuel prestataire en float
+- Ajouter note a table realtionnelle club_adherents
+- gerer les tarifs (table options(nom, prix) et table relationnelle adherent-prix))
+
+---------------------------------- TODO -------------------------------

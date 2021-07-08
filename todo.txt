@@ -1,5 +1,0 @@
-- Virer note de table club
-- Ajouter note a table realtionnelle club_adherents
-- Ajouter numero tel a adherent/employe/club/prestataire
-- Mettre prix mesuel prestataire en float
-- gerer les tarifs (table options(nom, prix) et table relationnelle adherent-prix))
