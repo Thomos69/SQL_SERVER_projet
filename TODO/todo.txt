@@ -8,5 +8,5 @@
 
 ---------------------------------- TODO -------------------------------
 
-- Revoir mpd/mcd + generer pdf (rename table prestations)
+- Revoir mpd/mcd + generer pdf (rename table prestations, modifier type note note)
 - mettre contrainte de note ( > 5 )

@@ -1,9 +1,3 @@
 Fonctions a faire
 
-- Calculer capacité covid (en fonction de la surface du club)
-- Calculer le nombre d'employé (compter le nombre d'employés)
 - Calculer le benefice de chaque club (CA - charges)
-- Calculer les notes
-- Calculer la moyenne des notes des clubs
-- Calculer le prix de l'abonnement
-- Calculer le prix moyen des abonnements par clubs
