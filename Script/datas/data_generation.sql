@@ -150,11 +150,11 @@ INSERT INTO employes([nom],[prenom],[numero_telephone],[date_de_naissance],[date
 
 --------------------------------------------- EMPLOYES ----------------------------------------
 
-INSERT [dbo].[options] ([ID], [nom], [prix]) VALUES (1, N'Formule simple', 30.0000)
-INSERT [dbo].[options] ([ID], [nom], [prix]) VALUES (2, N'Formule premium', 40.0000)
-INSERT [dbo].[options] ([ID], [nom], [prix]) VALUES (3, N'Coach', 15.0000)
-INSERT [dbo].[options] ([ID], [nom], [prix]) VALUES (4, N'Douche', 8.0000)
-INSERT [dbo].[options] ([ID], [nom], [prix]) VALUES (5, N'Boissons', 5.0000)
+INSERT [dbo].[options] ([nom], [prix]) VALUES (N'Formule simple', 30.0000)
+INSERT [dbo].[options] ([nom], [prix]) VALUES (N'Formule premium', 40.0000)
+INSERT [dbo].[options] ([nom], [prix]) VALUES (N'Coach', 15.0000)
+INSERT [dbo].[options] ([nom], [prix]) VALUES (N'Douche', 8.0000)
+INSERT [dbo].[options] ([nom], [prix]) VALUES (N'Boissons', 5.0000)
 
 --------------------------------------------- CLUB ----------------------------------------
 
@@ -195,4 +195,4 @@ INSERT INTO materiel([nom],[etat]) VALUES('Haltère','Très mauvais'),('Haltère
 
 --------------------------------------------- PRESTATAIRES ----------------------------------------
 
-INSERT INTO prestation_entretien([nom],[prix_mensuel]) VALUES('Jastik-fort',1261),('Balance ton balais',1300),('Léfam & cie',1607),('Spore et ménage',1096);
+INSERT INTO prestation([nom],[prix_mensuel]) VALUES('Jastik-fort',1261),('Balance ton balais',1300),('Léfam & cie',1607),('Spore et ménage',1096);
