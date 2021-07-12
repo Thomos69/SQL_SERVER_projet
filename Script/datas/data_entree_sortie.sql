@@ -76,7 +76,6 @@ INSERT INTO entree_sortie([entree], [sortie], [ID_adherents]) VALUES('27-11-2019
 INSERT INTO entree_sortie([entree], [sortie], [ID_adherents]) VALUES('25-05-2019 06:15', '25-05-2019 08:15', 501)
 INSERT INTO entree_sortie([entree], [sortie], [ID_adherents]) VALUES('04-03-2018 07:33', '04-03-2018 09:33', 1059)
 INSERT INTO entree_sortie([entree], [sortie], [ID_adherents]) VALUES('24-06-2019 17:15', '24-06-2019 19:15', 842)
-INSERT INTO entree_sortie([entree], [sortie], [ID_adherents]) VALUES('16-01-2019 20:17', '16-01-2019 22:17', 1391)
 INSERT INTO entree_sortie([entree], [sortie], [ID_adherents]) VALUES('18-03-2020 09:49', '18-03-2020 11:49', 12)
 INSERT INTO entree_sortie([entree], [sortie], [ID_adherents]) VALUES('28-12-2020 18:17', '28-12-2020 20:17', 934)
 INSERT INTO entree_sortie([entree], [sortie], [ID_adherents]) VALUES('21-03-2020 18:28', '21-03-2020 20:28', 71)
