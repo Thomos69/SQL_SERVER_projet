@@ -87,9 +87,19 @@ GO
 
 CREATE view infos_comptabilite
 AS
-select club.nom as 'Nom du Club', club.loyer as 'Prix du loyer', prestation.prix_mensuel as 'Prix prestation entretien',[Charges mensuelles],[Chiffre d'affaire],([Chiffre d'affaire] - [Charges mensuelles]) as "Bénefice mensuel"
-from club, prestation, club_prestation CROSS APPLY get_charges_mensuelle(ID_club) CROSS APPLY get_chiffre_affaire_club(ID_club)
+select club.nom as 'Nom du Club', club.loyer as 'Prix du loyer', prestation.prix_mensuel as 'Prix prestation entretien',[Salaires a payer],[Charges mensuelles] as 'Charges mensuelles totales',[Chiffre d'affaire],([Chiffre d'affaire] - [Charges mensuelles]) as "Bénefice mensuel"
+from club, prestation, club_prestation CROSS APPLY get_charges_mensuelle(ID_club) CROSS APPLY get_chiffre_affaire_club(ID_club) CROSS APPLY get_salaire_a_payer_par_club(ID_club)
 where club.ID = ID_club
 and prestation.ID = ID_prestation
 order by "Bénefice mensuel" DESC OFFSET 0 ROWS;
+GO
+
+
+-- Nombre personnes dans la salle 
+
+CREATE view personne_dans_la_salle
+AS
+select get_nb_personne_dans_salle.*, ([Nombre de personnes autorisées] - [Personne dans la salle]) as 'Places disponibles', [Nombre de personnes autorisées] as 'Nombre de place maximum'
+from club CROSS APPLY get_nb_personne_dans_salle(club.ID) CROSS APPLY get_nb_personne_max_covid(club.ID)
+order by [Personne dans la salle] DESC OFFSET 0 ROWS;
 GO

@@ -1,3 +1,1 @@
 Fonctions a faire
-
-- Calculer le benefice de chaque club (CA - charges)

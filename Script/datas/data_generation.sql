@@ -158,7 +158,7 @@ INSERT [dbo].[options] ([nom], [prix]) VALUES (N'Boissons', 5.0000)
 
 --------------------------------------------- CLUB ----------------------------------------
 
-INSERT INTO club([nom],[adresse],[numero_telephone],[surface_locaux],[loyer]) VALUES('Club Demetrius Valenzuela','444-2505 Neque Avenue','04 23 09 55 26',221,1444),('Gymnase Kato Shields','528-7736 Metus. Street','04 41 85 85 20',129,1710),('Gymnase Ciaran Curry','Ap #186-3923 Pede, Rd.','04 91 73 12 19',263,1748),('Salle Cain Buckner','4125 Consectetuer St.','04 07 95 92 62',95,1528),('Gymnase Charles Howe','942-1773 Sed St.','04 84 99 70 27',212,1961),('Gymnase Avram Sharpe','P.O. Box 817, 5256 In Ave','04 13 60 23 29',158,1600),('Club Finn Cochran','7093 Amet Street','04 42 02 38 68',245,1352);
+INSERT INTO club([nom],[adresse],[numero_telephone],[surface_locaux],[loyer]) VALUES('Club Demetrius Valenzuela','444-2505 Neque Avenue','04 23 09 55 26',221,1035),('Gymnase Kato Shields','528-7736 Metus. Street','04 41 85 85 20',129,718),('Gymnase Ciaran Curry','Ap #186-3923 Pede, Rd.','04 91 73 12 19',263,990),('Salle Cain Buckner','4125 Consectetuer St.','04 07 95 92 62',95,1104),('Gymnase Charles Howe','942-1773 Sed St.','04 84 99 70 27',212,765),('Gymnase Avram Sharpe','P.O. Box 817, 5256 In Ave','04 13 60 23 29',158,912),('Club Finn Cochran','7093 Amet Street','04 42 02 38 68',245,793);
 
 --------------------------------------------- MATERIEL ----------------------------------------
 
