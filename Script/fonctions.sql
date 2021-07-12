@@ -1,5 +1,10 @@
 -- Voir le nombres d'inscrits par club
 
+--DBCC CHECKIDENT ('club_employes', RESEED, 0);
+--GO
+
+
+
 CREATE view nb_inscrits_par_club
 AS
 select club.nom as 'Nom du club', count(*) as "Nombre d'inscrits" from club_adherent, club where ID_club = club.ID group by club.nom ORDER by [Nombre d'inscrits] DESC OFFSET 0 ROWS;
@@ -44,7 +49,7 @@ GO
 
 CREATE view nb_personne_covid
 AS
-select club.nom as 'Nom du Club', [Nombre de personnes autorisées] from club CROSS APPLY get_nb_personne_max_covid(club.nom) ORDER by [Nombre de personnes autorisées] DESC OFFSET 0 ROWS;
+select club.nom as 'Nom du Club', [Nombre de personnes autorisées] from club CROSS APPLY get_nb_personne_max_covid(club.ID) ORDER by [Nombre de personnes autorisées] DESC OFFSET 0 ROWS;
 GO
 
 
@@ -57,4 +62,34 @@ from options, adherents, adherents_options
 where adherents.ID = ID_adherents and options.ID = ID_options 
 GROUP BY CONCAT(adherents.nom, ' ',adherents.prenom)
 ORDER BY [Prix total] DESC OFFSET 0 ROWS
+GO
+
+
+-- Moyenne des prix payé par club
+
+--select club.nom, avg("Prix total") as "Prix total"
+--from club, adherents, club_adherent, prix_par_adherent
+--where club.ID = ID_club and adherents.ID = ID_adherent and prix_par_adherent.[Nom Prenom] = CONCAT(adherents.nom, ' ',adherents.prenom)
+--group by club.nom
+--order by [Prix total] DESC
+
+CREATE view prix_moyen_paye_par_adherent
+AS
+select club.nom, CAST(AVG("Prix total") as DECIMAL(4,2)) as "Prix moyen"
+from club, club_adherent, adherents CROSS APPLY get_prix_paye_par_adherent(adherents.ID)
+where club.ID = ID_club and adherents.ID = ID_adherent
+GROUP BY club.nom
+ORDER BY "Prix moyen" DESC OFFSET 0 ROWS;
+GO
+
+
+-- Comptabilité
+
+CREATE view infos_comptabilite
+AS
+select club.nom as 'Nom du Club', club.loyer as 'Prix du loyer', prestation.prix_mensuel as 'Prix prestation entretien',[Charges mensuelles],[Chiffre d'affaire],([Chiffre d'affaire] - [Charges mensuelles]) as "Bénefice mensuel"
+from club, prestation, club_prestation CROSS APPLY get_charges_mensuelle(ID_club) CROSS APPLY get_chiffre_affaire_club(ID_club)
+where club.ID = ID_club
+and prestation.ID = ID_prestation
+order by "Bénefice mensuel" DESC OFFSET 0 ROWS;
 GO
